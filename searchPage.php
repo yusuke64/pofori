@@ -35,7 +35,7 @@ if(!empty($_POST['search'])){
   }
 
   debug('user検索します');
-  $search_input = $_POST['search'];
+
   try {
     // DBへ接続
     $dbh = dbConnect();
@@ -66,6 +66,9 @@ if(!empty($_POST['search'])){
 }
 ?>
 <?php require('header.php'); ?>
+<script src="./js/vue.js"></script>
+<script src="./js/axios.js"></script>
+
 <style>
   body{
     background: #ebe9e920;
@@ -83,26 +86,27 @@ if(!empty($_POST['search'])){
   <?php } ?>
 
   <!-- 検索結果表示 -->
-  <div class="search-result-poforis"></div>
+
+  <!-- pofori言語の検索結果 -->
+  <div class="search-result-poforis">
+    <form method="POST" action="" v-for="pofori in searchResultPoforis">
+      <input type="hidden" name="search" :value="pofori.lang">
+      <button type="submit" class="search-result-pofori">
+      <p class="search-result-pofori-lang">{{ pofori.lang }}</p><i class="fas fa-arrow-circle-right"></i>
+      </button>
+    </form>
+  </div><!-- search-result-poforis -->
+
+  <!-- userの検索結果 -->
   <div class="search-result-users">
-  <?php
-   if(!(empty($dbResultUserData))):
-    foreach($dbResultUserData as $key => $val):
-  ?>
-
-  <form method="POST" action="createrPage.php">
-    <input type="hidden" name="id" value="<?php echo $val['id']; ?>">
-    <button type="submit" class="search-result-user">
-      <span class="search-result-image"><img src="./profImage/<?php if(!empty($val['prof_image'])){ echo sanitize($val['prof_image']); }else{ echo 'default.png'; } ?>"></span>
-      <span class="search-result-name"><?php echo sanitize($val['name']); ?></span>
-    </button>
-  </form>
-
-  <?php
-    endforeach;
-    endif;
-  ?>
-  </div>
+    <form method="POST" action="createrPage.php" v-for="user in searchResultUsers">
+      <input type="hidden" name="id" :value="user.id">
+      <button type="submit" class="search-result-user">
+      <span class="search-result-image"><img :src="user.prof_image | image"></span>
+      <span class="search-result-name">{{ user.name }}</span>
+      </button>
+    </form>
+  </div><!-- search-result-users -->
 
 
   <?php
@@ -111,11 +115,22 @@ if(!empty($_POST['search'])){
      viewPoforis($dbPoforiData);
    }
   ?>
-
 </section>
 
-<script src="./js/vue.js"></script>
-<script src="./js/axios.js"></script>
+<?php
+if(!empty($_POST['search'])){
+  $encodeUserdata = json_encode($dbResultUserData);
+  ?>
+  <script>
+    const dbUsersData = '<?php echo $encodeUserdata; ?>';
+  </script>
+  <?php
+}else{ ?>
+  <script>
+    const dbUsersData = null;
+  </script>
+<?php } ?>
+
 <script src="./js/search.js"></script>
 
 <?php require('footer.php'); ?>

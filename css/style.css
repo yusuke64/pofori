@@ -646,6 +646,7 @@ transform: translateY(-6px) rotate(45deg);
     margin-right: 10px;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    padding-right: 10px;
 }
 .search-input:focus{
     border: 1px solid #4790bb;
@@ -687,7 +688,7 @@ transform: translateY(-6px) rotate(45deg);
 .search-result-user,
 .search-result-pofori{
     animation-name: searchResult;
-    animation-duration: 1.5s;
+    animation-duration: .3s;
     border: none;
     display: flex;
     width: 100%;
@@ -695,13 +696,13 @@ transform: translateY(-6px) rotate(45deg);
     padding: 6px 0;
     transition: all .3s;
     background: #ffffff;
+    margin-bottom: 1px;
 }
 .search-result-pofori{
     padding: 0;
     font-size: 1.0rem;
     height: 45px;
     line-height: 45px;
-    border-bottom: 1px solid #e5e2e2d8;
     position: relative;
 }
 .search-result-pofori i{
@@ -719,9 +720,7 @@ transform: translateY(-6px) rotate(45deg);
 .search-result-pofori:hover{
     cursor: pointer;
 }
-.search-result-user:hover{
-    background: #f5f2f244;
-}
+.search-result-user:hover,
 .search-result-pofori:hover{
     background: #f5f2f273;
 }
