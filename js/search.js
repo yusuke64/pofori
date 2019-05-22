@@ -20,12 +20,13 @@ new Vue({
       params.append("data", value);
 
       axios.post("./searchAxios.php", params).then(response => {
-        const resultUsresDatas = response.data.users;
 
-        const resultPoforisDatas = response.data.poforis;
+        this.searchResultUsers = response.data.users;
+        this.searchResultPoforis = response.data.poforis;
 
-        this.searchResultUsers = resultUsresDatas;
-        this.searchResultPoforis = resultPoforisDatas;
+      }).catch(error => {
+        alert('エラーが発生しました。時間が経ってから再度お試しください。');
+        console.log(error);
       });
     }
   },

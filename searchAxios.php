@@ -14,3 +14,4 @@ $dbData = [
   'poforis' => getSearchPofori($val),
 ];
 echo json_encode($dbData);
+exit();
