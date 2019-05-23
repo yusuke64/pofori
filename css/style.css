@@ -1049,3 +1049,17 @@ transform: translateY(-6px) rotate(45deg);
         opacity: 1;
     }
 }
+
+/* ゲストログイン ------------------------- */
+.guest-login{
+    width: 300px;
+    margin: 150px auto 0;
+}
+.input-btn.guest{
+    width: 100%;
+    margin: 0 auto;
+    background: linear-gradient(to right, #21718b, #32add6);
+}
+.input-btn.guest:hover{
+    opacity: 0.7;
+}
