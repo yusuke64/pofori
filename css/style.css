@@ -193,24 +193,24 @@ p{
         color: #7ad2d8;
     }
     .nav-menu-sp{
-        display: block;
         box-shadow: 1px 0 3px #2A5772;
-        transition: .7s;
-        -webkit-transition: .7s;
         width: 100vw;
         height: 40vh;
-        margin-top: -100vh;
         text-align: center;
         padding: 40px 0 40px 0;
         font-weight: 600;
         background: #2A5772;
         position: relative;
-        z-index: -1;
     }
     .nav-menu-sp li{
-        height: 30%;
+        height: 80px;
         margin-bottom: 10px;
         font-size: 1.2rem;
+    }
+    .nav-menu-sp li a{
+        padding: 10px 25px;
+        box-shadow: 0 0 3px #fff;
+        border-radius: 8px;
     }
     .js-toggle-sp-menu-target.active{
         transition: .5s;

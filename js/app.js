@@ -6,7 +6,6 @@ $(function() {
     if (url === "/pofori/createrPage.php") {
       $('.nav-login-menu a[href="/pofori/index.php"] i').addClass("active");
     } else {
-      console.log(url);
       $('.nav-login-menu a[href="/pofori/mypage.php"] i').addClass(
         "active fas"
       );
@@ -21,8 +20,7 @@ $(function() {
   // トグルメニュー
   $(".js-toggle-sp-menu").on("click", function() {
     $(this).toggleClass("active");
-    $(".js-toggle-sp-menu-target").toggleClass("active");
-    // $(".js-toggle-opacity").toggleClass("active");
+    $(".js-toggle-sp-menu-target").slideToggle(500);
   });
 
   // マイページのPOFORI、FOVORITE切り替え
