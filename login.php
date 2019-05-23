@@ -123,8 +123,14 @@ if(empty($err_msg)){
         <input id="check" class="js-check" type="checkbox" name="pass_save" style="display: none;">ログイン保持
     </label>
 
-    <button class="input-btn" type="submit" name="submit">  ログイン</button>
+    <button class="input-btn" type="submit" name="submit">ログイン</button>
 </form>
+
+<div class="guest-login">
+    <form action="guestLogin.php">
+        <button class="input-btn guest" type="submit" name="submit">ゲストとしてログインする</button>
+    </form>
+</div>
 </section>
 
 <?php require('footer.php'); ?>
