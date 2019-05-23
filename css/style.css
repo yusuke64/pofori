@@ -918,10 +918,17 @@ transform: translateY(-6px) rotate(45deg);
 }
 .input-btn.cancel{
     float: left;
+    background: #fff;
+    border: 1px solid #2A5772;
+    color: #2A5772
 }
 .input-btn:hover{
     background-color: #4790BB;
     cursor: pointer;
+}
+.input-btn.cancel:hover{
+    opacity: .7;
+    background: #fff;
 }
 .input-textarea{
     height: auto;
