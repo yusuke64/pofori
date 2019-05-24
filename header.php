@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="ポートフォリオ共有サービス 「POFORI」">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:title" content="POFORI" />
+    <meta property="og:url" content="https://pofori.com" />
+    <meta property="og:description" content="ポートフォリオ共有サービス 「POFORI」" />
+    <meta property="og:image" content="https://pofori.com/pofori.png" />
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="css/style.css">
